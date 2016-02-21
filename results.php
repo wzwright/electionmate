@@ -136,6 +136,7 @@ function change(data) {
 				change(getData());
 			});
 	if(data.type=="referendum"){
+		console.log(data.type);
 		for(var i=0;i<data.questions.length;i++)
 				counts[i]={yes:0,no:0,abstain:0};
 			for(var email in data.respondents){
@@ -175,7 +176,7 @@ function change(data) {
 			change(getData());
 		});
 }
-else if(data.type=="approval"){
+/*else if(data.type=="approval"){
 	for(var i=0;i<data.questions.length;i++){
 		counts[i]=Object();
 		for(var option in data.questions[i].options)
@@ -187,7 +188,6 @@ else if(data.type=="approval"){
 				counts[j][data.respondents[email].votes[j].charAt(0)]++;
 		}
 	}
-	console.log(counts);
 	var color = d3.scale.category10();
 
 		function getData (){
@@ -208,7 +208,7 @@ else if(data.type=="approval"){
 		}
 		change(getData());
 
-		poll.on('value',function(snapshot){
+		/*poll.on('value',function(snapshot){
 			for(var i=0;i<data.questions.length;i++){
 		counts[i]=Object();
 		for(var option in data.questions[i].options)
@@ -224,6 +224,7 @@ else if(data.type=="approval"){
 		});
 
 	}
+}*/
 });
 </script>
 <body>
