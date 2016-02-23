@@ -6,8 +6,8 @@ foreach($respondents as $email => $value){
 	$email=str_replace("|",".",$email);
 	$mailText="Vote <a href='http://localhost/electionmate/vote.php?id=".$value['id']."&owner=".$_SESSION['user']."&poll=".$id."&email=".$email."'>here</a>";
 	$postFields = array(
-		'api_user'=>'complexity',
-		'api_key'=>'bionicle1',
+		'api_user'=>'username',
+		'api_key'=>'password',
 		'to'=>$email, 
 		'from'=>$_SESSION['email'], 
 		'subject'=>'Time to vote! '.$_GET['title'], 
